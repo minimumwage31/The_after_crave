@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Order – The After Crave</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f7e7f1;
+      color: #9e2a44;
+      padding: 40px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      text-align: center;
+      color: #d24a5f;
+    }
+
+    form {
+      background: #ffe8f2;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(157, 42, 68, 0.2);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, textarea, select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 1em;
+    }
+
+    button {
+      background-color: #d24a5f;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1em;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #b0304c;
+    }
+  </style>
+</head>
+<body>
+  <h1>Place Your Order</h1>
+
+  <form action="https://formspree.io/f/movwoggg" method="POST">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="email">Your Email</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="items">What would you like to order?</label>
+    <textarea id="items" name="items" rows="4" placeholder="e.g. 2 Cake Cups, 1 Red Velvet Oreo Cookie" required></textarea>
+
+    <label for="method">Pickup or Delivery?</label>
+    <select id="method" name="method" required>
+      <option value="Pickup">Pickup</option>
+      <option value="Delivery">Delivery</option>
+    </select>
+
+    <label for="notes">Additional Notes</label>
+    <textarea id="notes" name="notes" rows="3" placeholder="Allergies, preferred time, delivery address, etc."></textarea>
+
+    <button type="submit">Submit Order</button>
+  </form>
+</body>
+</html>
