@@ -19,63 +19,45 @@
       color: #9e2a44;
     }
 
-    /* Intro section with picture scaling */
+    /* Intro section with full picture and text below */
     .intro {
       position: relative;
-      height: 100vh;
       width: 100%;
-      overflow: hidden;
+      padding-bottom: 40px; /* space below image for text */
+      overflow: visible;
+      text-align: center;
+      background: none;
+      margin-top: 20px;
     }
 
     .intro img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      transform-origin: center;
-      transition: transform 1s ease, opacity 1s ease;
-      border: 15px solid #d24a5f; /* bigger border so no cropping */
-      border-radius: 30px;
-      box-shadow: 0 10px 20px rgba(210, 74, 95, 0.6);
+      width: 80%;   /* picture width with margin */
+      max-width: 600px;
+      height: auto; /* maintain aspect ratio */
+      object-fit: contain;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(210, 74, 95, 0.5);
+      margin: 0 auto;
+      display: block;
+      position: static;
+      transform: none;
+      opacity: 1;
+      transition: none;
     }
 
     .intro-text {
       font-family: 'Pacifico', cursive;
       font-size: 4vw;
-      color: #fff;
-      background: rgba(0, 0, 0, 0.4);
-      padding: 20px 40px;
-      border-radius: 20px;
-      animation: fadeDown 2s ease-out;
-      position: relative;
-      z-index: 2;
-      transition: transform 0.5s ease, opacity 0.5s ease;
-      max-width: max-content;
-      margin: 40px;
-      user-select: none;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
-    }
-
-    .shrink-image {
-      transform: scale(0.6);
-      opacity: 0.6;
-      border-width: 8px;
-      border-radius: 15px;
-      box-shadow: 0 6px 15px rgba(210, 74, 95, 0.3);
-    }
-
-    .shrink-text {
-      transform: scale(0.5);
-      opacity: 0.7;
-    }
-
-    @keyframes fadeDown {
-      from { transform: translateY(-50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+      color: #d24a5f;
+      margin-top: 25px;
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      text-shadow: none;
+      position: static;
+      opacity: 1;
+      transform: none;
+      transition: none;
     }
 
     header {
@@ -183,7 +165,7 @@
 <body>
 
   <div class="intro">
-    <img id="introImage" src="4657ec0e-fe89-49df-b4be-9e050bd213c8.png" alt="Intro Picture">
+    <img id="introImage" src="4657ec0e-fe89-49df-b4be-9e050bd213c8.png" alt="Intro Picture" />
     <div class="intro-text" id="introText">Welcome to The After Crave</div>
   </div>
 
@@ -218,20 +200,7 @@
     </section>
   </main>
 
-  <script>
-    window.addEventListener('scroll', function () {
-      const introText = document.getElementById('introText');
-      const introImage = document.getElementById('introImage');
-
-      if (window.scrollY > 100) {
-        introText.classList.add('shrink-text');
-        introImage.classList.add('shrink-image');
-      } else {
-        introText.classList.remove('shrink-text');
-        introImage.classList.remove('shrink-image');
-      }
-    });
-  </script>
+  <!-- Scroll script removed to keep image and text stable -->
 
 </body>
 </html>
