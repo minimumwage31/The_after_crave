@@ -19,7 +19,6 @@
       color: #9e2a44;
     }
 
-    /* Intro section */
     .intro {
       position: relative;
       height: 100vh;
@@ -29,6 +28,11 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      transition: height 0.8s ease;
+    }
+
+    .intro.shrink-bg {
+      height: 300px;
     }
 
     .intro-text {
@@ -92,6 +96,9 @@
       gap: 20px;
       margin: 20px auto;
       justify-content: center;
+      background: #ffe0ef;
+      padding: 10px 0;
+      border-radius: 10px;
     }
 
     nav a {
@@ -101,11 +108,12 @@
       text-decoration: none;
       color: #d24a5f;
       font-weight: bold;
-      transition: background 0.3s;
+      transition: background 0.3s, transform 0.2s;
     }
 
     nav a:hover {
       background: #ffd0e4;
+      transform: scale(1.1);
     }
 
     main {
@@ -156,7 +164,7 @@
 </head>
 <body>
 
-  <div class="intro">
+  <div class="intro" id="intro">
     <div class="intro-text" id="introText">Welcome to The After Crave</div>
   </div>
 
@@ -192,13 +200,15 @@
   </main>
 
   <script>
-    // Shrink the intro text on scroll
     window.addEventListener('scroll', function () {
-      const intro = document.getElementById('introText');
+      const intro = document.getElementById('intro');
+      const introText = document.getElementById('introText');
       if (window.scrollY > 100) {
-        intro.classList.add('shrink');
+        introText.classList.add('shrink');
+        intro.classList.add('shrink-bg');
       } else {
-        intro.classList.remove('shrink');
+        introText.classList.remove('shrink');
+        intro.classList.remove('shrink-bg');
       }
     });
   </script>
