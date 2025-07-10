@@ -26,6 +26,9 @@
       background-color: #ffc1d6;
       padding: 20px 40px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     header h1 {
@@ -73,23 +76,32 @@
     }
 
     .intro-section {
-      text-align: center;
-      margin: 40px 20px;
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .intro-section img {
-      width: 80%;
-      max-width: 500px;
-      border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: transform 0.5s ease;
     }
 
-    .intro-section h2 {
-      font-size: 2.5em;
-      color: #d24a5f;
+    .intro-text {
       font-family: 'Pacifico', cursive;
-      animation: fadeIn 1.5s ease-out;
+      font-size: 4em;
+      color: #d24a5f;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+      text-align: center;
+      animation: fadeIn 1.5s ease;
     }
 
     main {
@@ -123,6 +135,13 @@
       line-height: 1.6;
     }
 
+    .about-img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 20px;
+      margin-top: 20px;
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
@@ -145,16 +164,16 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="intro" class="intro-section">
-    <img src="4657ec0e-fe89-49df-b4be-9e050bd213c8.png" alt="Intro Image" />
-    <h2>Welcome to The After Crave!</h2>
+  <section class="intro-section" id="intro">
+    <img src="4657ec0e-fe89-49df-b4be-9e050bd213c8.png" alt="Intro Image">
+    <div class="intro-text">Welcome to The After Crave</div>
   </section>
 
   <main>
     <section class="section-box" id="about">
       <h2>About Us</h2>
       <p>Welcome to The After Crave – your go-to spot for sweet treats and baked goodness! We put love and care into every creation.</p>
-      <img src="images/your-person-image.jpg" alt="Founder" style="width: 100%; max-width: 300px; margin-top: 15px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+      <img src="your-person-photo.png" alt="Person" class="about-img">
     </section>
 
     <section class="section-box" id="menu">
