@@ -36,8 +36,8 @@
       top: 0;
       left: 0;
       z-index: -1;
-      transform-origin: center;
-      transition: transform 1s ease, opacity 1s ease;
+      transform-origin: center top;
+      transition: transform 0.4s ease-out, opacity 0.4s ease-out;
     }
 
     .intro-text {
@@ -50,22 +50,7 @@
       animation: fadeDown 2s ease-out;
       position: relative;
       z-index: 2;
-      transition: transform 0.5s ease, opacity 0.5s ease;
-    }
-
-    .shrink-on-scroll {
-      transition: transform 0.2s ease-out;
-      transform-origin: center top;
-    }
-
-    .shrink-image {
-      transform: scale(1.1);
-      opacity: 0.6;
-    }
-
-    .shrink-text {
-      transform: scale(0.5);
-      opacity: 0.5;
+      transition: transform 0.4s ease-out, opacity 0.4s ease-out;
     }
 
     @keyframes fadeDown {
@@ -178,8 +163,8 @@
 <body>
 
   <div class="intro">
-    <img id="introImage" class="shrink-on-scroll" src="4657ec0e-fe89-49df-b4be-9e050bd213c8.png" alt="Intro Picture">
-    <div class="intro-text shrink-on-scroll">Welcome to The After Crave</div>
+    <img id="introImage" src="4657ec0e-fe89-49df-b4be-9e050bd213c8.png" alt="Intro Picture">
+    <div id="introText" class="intro-text">Welcome to The After Crave</div>
   </div>
 
   <header>
@@ -214,14 +199,19 @@
   </main>
 
   <script>
-    const introText = document.querySelector('.intro-text');
-    const introImage = document.querySelector('#introImage');
+    const introText = document.getElementById('introText');
+    const introImage = document.getElementById('introImage');
 
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
-      const scale = Math.max(0.6, 1 - scrollY / 600);
+      const scale = Math.max(0.5, 1 - scrollY / 500);
+      const opacity = Math.max(0.4, 1 - scrollY / 500);
+
       introText.style.transform = `scale(${scale})`;
+      introText.style.opacity = opacity;
+
       introImage.style.transform = `scale(${scale})`;
+      introImage.style.opacity = opacity;
     });
   </script>
 
