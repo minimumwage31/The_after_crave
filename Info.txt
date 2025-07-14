@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Info - The After Crave</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff0f6;
+      color: #b13a5b;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #f9c2d1;
+      padding: 10px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+    }
+    header img.logo {
+      max-width: 150px;
+      width: 40vw;
+      cursor: pointer;
+    }
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background: #d43f6f;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      flex: 1;
+      text-align: center;
+    }
+    nav a:hover {
+      background: #b13a5b;
+    }
+    main {
+      max-width: 700px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+    section {
+      background: white;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 10px rgba(177, 58, 91, 0.1);
+    }
+    h1, h2 {
+      color: #d43f6f;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      color: #b13a5b;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <!-- Replace with your logo PNG URL if needed -->
+  <img src="https://i.imgur.com/kxqPoD9.png" alt="The After Crave Logo" class="logo" />
+</header>
+
+<nav>
+  <a href="order.html">Order</a>
+  <a href="info.html">Info</a>
+  <a href="about.html">About Us</a>
+  <a href="menu.html">Menu</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+  <section>
+    <h1>Important Info</h1>
+    <p>Welcome to The After Crave! Here's everything you need to know before ordering your sweets:</p>
+    
+    <ul>
+      <li><strong>Pickup & Delivery:</strong> We offer pickup in Newark and local delivery within 10 miles.</li>
+      <li><strong>Custom Orders:</strong> Custom cakes and large orders require 48 hours notice.</li>
+      <li><strong>Payment:</strong> We accept Cash App, Zelle, and PayPal.</li>
+      <li><strong>Allergens:</strong> Our treats may contain dairy, eggs, wheat, and nuts. Please notify us of any allergies.</li>
+      <li><strong>Freshness:</strong> All items are made-to-order to guarantee freshness.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 The After Crave — All Rights Reserved
+</footer>
+
+</body>
+</html>
